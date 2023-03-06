@@ -1,0 +1,27 @@
+<?php
+
+namespace App\Http\Livewire;
+
+use App\Models\User;
+use Livewire\Component;
+
+class TopHeader extends Component
+{
+
+    // Mounting
+    public $author;
+    // Auto change after update
+    protected $listeners = [
+        'updateTopHeader' => '$refresh'
+    ];
+
+    public function mount()
+    {
+        $this->author = User::find(auth('web')->id());
+    }
+
+    public function render()
+    {
+        return view('livewire.top-header');
+    }
+}
