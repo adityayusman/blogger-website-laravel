@@ -63,7 +63,7 @@
                                 <div class="widget-list">
 
                                     @foreach (latest_sidebar_posts() as $item)
-                                        <a class="media align-items-center" href="article.html">
+                                        <a class="media align-items-center" href="{{ route('read_post', $item->post_slug) }}">
                                             <img loading="lazy" decoding="async"
                                                 src="/storage/images/post_images/thumbnails/thumb_{{ $item->featured_image }}"
                                                 alt="Post Thumbnail" class="w-100">
